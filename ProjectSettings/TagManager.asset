@@ -19,7 +19,7 @@ TagManager:
   - Background
   - Enemy
   - Hazards
-  - 
+  - Interactibles
   - 
   - 
   - 
@@ -52,6 +52,9 @@ TagManager:
     locked: 0
   - name: Hazards Layer
     uniqueID: 1926060819
+    locked: 0
+  - name: Interactibles
+    uniqueID: 3089140265
     locked: 0
   - name: Player Layer
     uniqueID: 945399327

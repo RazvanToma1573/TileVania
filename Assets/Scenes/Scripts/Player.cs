@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
     }
 
     private void Die() {
-        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards"))) {
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards")) || myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards"))) {
             myAnimator.SetTrigger("Die");
             GetComponent<Rigidbody2D>().velocity = deathKick;
             isAlive = false;
@@ -59,12 +59,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) {
-            print("slm");
-            return; 
-        }
-
-        print("slm2");
+        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
 
         if (Input.GetButtonDown("Jump"))
         {
